@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowDown } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
