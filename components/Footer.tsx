@@ -1,37 +1,29 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-gray-100 pt-16 pb-8 border-t border-gray-200">
-      <div className="max-w-4xl mx-auto px-6">
-        
-        {/* FAQ Section */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center text-slate-900 mb-8">Soalan Lazim (FAQ)</h3>
-          <div className="space-y-4">
-            <FAQItem 
-              question="Saya tak pandai English, boleh guna ke?" 
-              answer="Boleh. Dalam kit ni kami sediakan skrip English yang simple tapi power. Anda cuma perlu hafal je. Kami dah simplify ayat-ayat tu supaya bunyi natural." 
-            />
-            <FAQItem 
-              question="Format apa ebook ni?" 
-              answer="Semua material adalah digital (PDF & Video). Anda boleh terus download dan baca kat phone atau laptop serta-merta lepas pembayaran disahkan." 
-            />
-            <FAQItem 
-              question="Kalau tak menjadi macam mana?" 
-              answer="Kami ada 30-day money back guarantee. Kalau anda dah baca dan rasa tak berbaloi, email je kami. Kami refund 100% duit anda tanpa banyak soal." 
-            />
-          </div>
+    <footer className="w-full bg-slate-900 py-10 px-4 text-white">
+      <div className="mb-10">
+        <h3 className="text-xl font-black text-center uppercase mb-6 text-gray-200">Soalan Lazim (FAQ)</h3>
+        <div className="space-y-3">
+          <FAQItem 
+            question="Saya tak pandai English, boleh guna ke?" 
+            answer="Boleh. Skrip kami ada versi Bahasa Melayu dan 'Simple English' yang mudah dihafal. Tak perlu grammar power." 
+          />
+          <FAQItem 
+            question="Sesuai untuk kerja kerajaan?" 
+            answer="Ya. Teknik psikologi dan body language ni universal. Panel temuduga kerajaan pun manusia biasa." 
+          />
+          <FAQItem 
+            question="Macam mana nak dapatkan?" 
+            answer="Tekan butang merah 'Download Sekarang'. Lepas bayar, anda akan terus dapat link download ke email." 
+          />
         </div>
+      </div>
 
-        <div className="border-t border-gray-300 pt-8 text-center">
-          <p className="text-slate-900 font-bold text-lg mb-2">Kit Pukau Majikan</p>
-          <p className="text-gray-500 text-sm">
-            Designed for Malaysian Talents. &copy; 2026. <br/>
-            Penafian: Ini adalah produk pendidikan untuk tujuan kerjaya.
-          </p>
-        </div>
+      <div className="text-center border-t border-gray-800 pt-6">
+        <p className="font-bold text-gray-400 text-sm">Kit Pukau Majikan &copy; 2026</p>
+        <p className="text-xs text-gray-600 mt-2">Disclaimer: Results may vary. Hard work required.</p>
       </div>
     </footer>
   );
@@ -41,16 +33,16 @@ const FAQItem: React.FC<{ question: string, answer: string }> = ({ question, ans
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div className="bg-slate-800 rounded overflow-hidden">
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 text-left flex justify-between items-center font-bold text-slate-800 hover:bg-gray-50 transition-colors"
+        className="w-full px-4 py-3 text-left flex justify-between items-center font-bold text-sm hover:bg-slate-700"
       >
         {question}
-        {isOpen ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
+        <i className={`fa-solid ${isOpen ? 'fa-minus' : 'fa-plus'} text-xs text-gray-400`}></i>
       </button>
       {isOpen && (
-        <div className="px-6 pb-6 text-gray-600 leading-relaxed bg-gray-50 border-t border-gray-100">
+        <div className="px-4 pb-4 text-gray-300 text-xs leading-relaxed border-t border-slate-700 pt-2">
           {answer}
         </div>
       )}
