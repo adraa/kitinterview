@@ -2,36 +2,43 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="w-full px-5 py-20 md:py-32 flex flex-col items-center text-center max-w-6xl mx-auto bg-white">
-      <div className="space-y-6 animate-fade-in-up">
-        {/* Super Headline */}
-        <p className="text-red-600 font-bold tracking-widest uppercase text-sm md:text-base animate-pulse">
-          AMARAN: TEKNIK INI UNTUK YANG SERIUS NAK KERJA SAHAJA
-        </p>
+    <section className="w-full pt-8 pb-6 px-4 bg-white flex flex-col items-center text-center border-b border-gray-100">
+      <div className="max-w-3xl w-full flex flex-col items-center">
+        {/* Top Badge */}
+        <div className="bg-red-600 text-white px-3 py-1 text-xs font-black uppercase tracking-widest rounded mb-4 shadow-sm animate-pulse">
+          Amaran: Teknik Ini Untuk Yang Serius Sahaja
+        </div>
 
-        {/* Main Headline */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-tight md:leading-[1.1]">
-          SIAPA SANGKA CUMA UBAH <br className="hidden md:block"/>
-          <span className="text-red-600 underline decoration-red-200 decoration-4 underline-offset-4">'SKRIP'</span> 
-          BOLEH DAPAT GAJI <br className="hidden md:block"/>
-          RM3,000+ SEBULAN?
+        {/* Headline */}
+        <h1 className="text-3xl md:text-5xl font-black text-slate-900 leading-[1.1] uppercase mb-4 tracking-tight">
+          Siapa Sangka Cuma Ubah <span className="bg-red-600 text-white px-2 shadow-sm inline-block transform -rotate-1">SKRIP</span> Boleh Dapat Gaji RM3,000+?
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg md:text-2xl text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base md:text-xl text-gray-700 font-bold max-w-xl mx-auto leading-snug mb-6">
           Tak Perlu Kabel. Tak Perlu English Power. <br/>
-          <span className="font-bold underline decoration-yellow-400 text-slate-900">Tak Perlu Muka Hensem.</span>
+          <span className="text-slate-900 underline decoration-red-500 decoration-4">Tak Perlu Muka Hensem.</span>
         </p>
 
+        {/* Hero Image */}
+        <div className="w-full max-w-2xl mb-6 relative group">
+          <div className="absolute -inset-1 bg-red-600 rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
+          <img 
+            src="https://placehold.co/600x400/f8f9fa/1d1d1f?text=PREVIEW+KIT+PUKAU" 
+            alt="Interview Guide Preview" 
+            className="relative w-full rounded-lg border-4 border-white shadow-xl"
+          />
+        </div>
+
         {/* CTA Button */}
-        <div className="pt-8 w-full flex flex-col items-center">
+        <div className="w-full md:w-auto flex flex-col items-center">
           <a 
             href="#pricing"
-            className="w-full md:w-auto px-8 py-5 bg-red-600 hover:bg-red-700 text-white text-xl md:text-2xl font-bold rounded-xl shadow-xl hover:shadow-red-500/50 transition-all transform hover:-translate-y-1 animate-pulse-fast"
+            className="w-full md:w-auto px-8 py-4 bg-red-600 hover:bg-red-700 text-white text-lg md:text-2xl font-black uppercase rounded shadow-xl shadow-red-600/20 transition-all transform hover:-translate-y-0.5 animate-pulse-fast"
           >
-            SAYA NAK RAHSIA NI (RM49)
+            Saya Nak Rahsia Ni (RM49)
           </a>
-          <p className="mt-4 text-sm text-gray-500 italic">
+          <p className="mt-2 text-[10px] md:text-xs text-gray-500 font-bold uppercase tracking-wide">
             *Dah lebih 1,200 graduan 🇲🇾 berjaya guna teknik ni.
           </p>
         </div>

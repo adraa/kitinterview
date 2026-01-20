@@ -3,62 +3,62 @@ import { BookOpen, FileText, CheckCircle, User, Mail, Star } from 'lucide-react'
 
 const Solution: React.FC = () => {
   return (
-    <section className="w-full py-20 px-5 max-w-6xl mx-auto bg-white">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4">
-          Berhenti Stress. Ini Jalan Pintas Dia.
-        </h2>
-        <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-          Kami dah pakejkan semua benda yang anda perlu untuk 'hack' interview ni.
-        </p>
-      </div>
+    <section className="w-full py-10 px-4 bg-gray-50 border-t border-b border-gray-200">
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-black text-slate-900 uppercase mb-1 tracking-tight">
+            Ini Jalan Pintas Dia
+          </h2>
+          <p className="text-gray-500 font-bold uppercase tracking-wide text-[10px]">Pakej lengkap untuk 'hack' interview</p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <FeatureCard 
-          icon={<BookOpen className="w-6 h-6 text-white" />}
-          title="Blueprint Pukau Interviewer"
-          desc="Ebook Utama. Kitab rahsia yang HR tak nak anda tahu."
-        />
-        <FeatureCard 
-          icon={<FileText className="w-6 h-6 text-white" />}
-          title="30 Skrip Jawapan Maut"
-          desc="Tak payah fikir. Copy, paste, hafal, dan luahkan masa interview."
-        />
-        <FeatureCard 
-          icon={<CheckCircle className="w-6 h-6 text-white" />}
-          title="Checklist Anti-Gugup"
-          desc="Baca 5 minit sebelum masuk bilik. Hilang terus gemuruh."
-        />
-        <FeatureCard 
-          icon={<User className="w-6 h-6 text-white" />}
-          title="Hacks Body Language"
-          desc="Cara duduk & pandang mata yang buat anda nampak confident."
-        />
-        <FeatureCard 
-          icon={<Mail className="w-6 h-6 text-white" />}
-          title="7-Hari Crash Course"
-          desc="Email series bimbingan straight to the point."
-        />
-        <FeatureCard 
-          icon={<Star className="w-6 h-6 text-white" />}
-          title="BONUS: Realiti Malaysia"
-          desc="Cara nego gaji style jalanan. Jangan terima je offer rendah!"
-          isBonus
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <FeatureCard 
+            icon={<BookOpen className="w-5 h-5 text-red-600" />}
+            title="Blueprint Pukau"
+            desc="Kitab rahsia HR simpan."
+          />
+          <FeatureCard 
+            icon={<FileText className="w-5 h-5 text-red-600" />}
+            title="30 Skrip Maut"
+            desc="Copy, paste, hafal je."
+          />
+          <FeatureCard 
+            icon={<CheckCircle className="w-5 h-5 text-red-600" />}
+            title="Checklist Anti-Gugup"
+            desc="Hilang gemuruh 5 minit."
+          />
+          <FeatureCard 
+            icon={<User className="w-5 h-5 text-red-600" />}
+            title="Body Language Hack"
+            desc="Nampak confident gila."
+          />
+          <FeatureCard 
+            icon={<Mail className="w-5 h-5 text-red-600" />}
+            title="7-Hari Crash Course"
+            desc="Bimbingan direct email."
+          />
+          <FeatureCard 
+            icon={<Star className="w-5 h-5 text-yellow-600" />}
+            title="BONUS: Nego Gaji"
+            desc="Jangan terima offer rendah!"
+            highlight
+          />
+        </div>
       </div>
     </section>
   );
 };
 
-const FeatureCard: React.FC<{ icon: React.ReactNode, title: string, desc: string, isBonus?: boolean }> = ({ icon, title, desc, isBonus }) => {
+const FeatureCard: React.FC<{ icon: React.ReactNode, title: string, desc: string, highlight?: boolean }> = ({ icon, title, desc, highlight }) => {
   return (
-    <div className={`p-6 rounded-xl border ${isBonus ? 'bg-yellow-50 border-yellow-200' : 'bg-white border-gray-100'} shadow-lg flex items-start space-x-4 hover:shadow-xl transition-shadow`}>
-      <div className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center ${isBonus ? 'bg-yellow-500' : 'bg-green-500'}`}>
+    <div className={`p-3 rounded border-2 ${highlight ? 'bg-yellow-50 border-yellow-400' : 'bg-white border-gray-200'} flex items-center space-x-3`}>
+      <div className="flex-shrink-0">
         {icon}
       </div>
       <div>
-        <h3 className="font-bold text-lg text-slate-900 mb-1">{title}</h3>
-        <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
+        <h3 className="font-black text-slate-900 text-sm uppercase leading-none mb-1">{title}</h3>
+        <p className="text-gray-600 text-xs font-bold leading-none">{desc}</p>
       </div>
     </div>
   );
